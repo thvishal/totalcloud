@@ -1,0 +1,290 @@
+body{
+  overflow-x: hidden;
+  background-color: #2f76e9;
+}
+.black{
+  background-color: #000;
+}
+ul li,ol li{
+  list-style : none;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 15px 40px;
+    z-index: 222;
+}
+.AppMenu ul li a {
+  padding: 20px 17px;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #fff;
+  transition: 0s;
+  font-family: 'Monster', sans-serif !important;
+  margin-left:8px;
+}
+.AppMenu ul li {
+  display: inline-block;
+  height: 100%;
+}
+.sub_header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.logo {
+  width: 172px;
+}
+.ApMenu {
+  width: calc(100% - 172px);
+  text-align: right;
+}
+.AppToggle {
+  display: none;
+}
+.AppMenu {
+  height: 100%;
+}
+.app .container{
+    padding: 100px 0px;
+}
+.app .row {
+  background-color: #fff;
+    padding: 100px 34px;
+    box-shadow: 0px 3px 16px #00000019;
+    display: flex;
+}
+.putitdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.app_left_side,.app_rigth_side {
+    border: 1px solid #CECECE;
+    padding: 30px 20px;
+    height : 442px;
+}
+.common_list-item{
+  border:unset;
+}
+.common_list-item:hover {
+    background-color: #efeded;
+}
+.common_list-item{
+position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+  }
+  .common_list-item.active, .common_list-item.active:focus, .common_list-item.active:hover {
+      z-index: 2;
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #337ab7;
+  }
+.app h1 {
+    padding-bottom: 40px;
+    text-align: center;
+    color: #fff;
+}
+.add,.remove {
+    background-color: 2f76e9;
+    color: #fff;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+}
+a.add {
+    margin-bottom: 18px;
+}
+.name {
+    display: inline-block;
+    padding-left: 12px;
+}
+.img {
+    display: inline-block;
+    width: 43px;
+}
+.img img {
+    width: 40px;
+    height: 40px;
+}
+a.add:hover,a.add:focus, a.remove:hover,a.remove:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#2196F3;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.switch.button {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+.add.black,.remove.black {
+    background-color: #000;
+}
+@media only screen and (max-width:991px){
+.AppToggle{
+  display:block;
+  position:relative;
+  float: right;
+}
+.AppMenu ul li a {
+color:#000;
+}
+.app .row {
+    padding: 40px 0px;
+    width: 90%;
+    margin: auto;
+}
+.app .container {
+    padding: 70px 0px 50px;
+}
+.AppMenu{
+  display:none;
+}
+.app h1 {
+  font-size: 25px;
+}
+.app .row{
+  display: block;
+}
+.AppToggle span{
+  display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0px;
+    transition:0.4s;
+}
+.AppMenu.active{
+  display:block;
+}
+a.add {
+    margin-bottom: 0px;
+    margin-right: 20px;
+}
+.putitdown {
+    flex-direction: unset;
+    padding: 30px 0px;
+}
+.add, .remove {
+    padding: 15px 30px;
+  }
+.AppToggle.active span:nth-child(1){
+  transform: rotate(45deg);
+  transform-origin: 0%;
+  margin: 0 0 8px 0;
+}
+.AppToggle.active span:nth-child(2){
+  opacity: 0;
+}
+.AppToggle.active span:nth-child(3){
+  transform: rotate(-45deg);
+  transform-origin: 0%;
+}
+.AppMenu.active ul{
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  text-align: left;
+  top: 49px;
+  background-color: #fafafa;
+  padding: 10px 0px 15px;
+  border-bottom: 1px solid #f4a340;
+}
+.AppMenu.active ul li{
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+.AppMenu.active ul li a{
+  display: block;
+  padding: 6px 15px;
+  font-size: 16px;
+  letter-spacing: normal;
+}
+.header{
+  padding: 10px 15px;
+  background-color: #4abae8;
+}
+.sub_header .logo{
+  width: 140px;
+}
+.sub_header .ApMenu{
+  width: calc(100% - 140px);
+}
+.logo a img {
+  width: 140px;
+}
+}

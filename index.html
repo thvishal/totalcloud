@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<style>
+</style>
+<body>
+  <header>
+   <div class="header">
+      <div class="sub_header">
+         <div class="logo">
+            <a href="/"><img src="./images/TOTAL CLOUD.svg"></a>
+         </div>
+         <div class="ApMenu">
+            <div class="AppToggle">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </div>
+            <div class="AppMenu">
+               <ul id="menu-primary" class="menu">
+                  <li><a>Home</a></li>
+                  <li><a>About</a></li>
+                  <li><a>Features</a></li>
+                  <li><a >Pricing</a></li>
+                  <li><a>Screenshot</a></li>
+                  <li><a>Contact</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+<div class="app">
+  <div class='container'>
+    <h1>Resource Allocation Application</h1>
+    <div class="switch button">
+      <h4>Switch to dark mode</h4>
+      <label class="switch">
+      <input type="checkbox"  id="slider">
+      <span class="slider round"></span>
+    </label>
+    </div>
+    <div class="row pick-list">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="app_left_side">
+          <ul class="common_list source">
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img1.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img2.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img3.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img4.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img5.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+            <li class="common_list-item">
+              <div class="img">
+                <img src="./images/img6.png">
+              </div>
+              <div class="name">
+                Elizabeth Fisher
+              </div>
+            </li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-lg-2 col-sm-12 col-xs-12 putitdown">
+        <a href="javascript:void(0)" class="add">Assign&nbsp;<i class="fa fa-angle-double-right"></i></a>
+        <a href="javascript:void(0)" class="remove"><i class="fa fa-angle-double-left"></i>&nbsp;Revoke</a>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <div class="app_rigth_side">
+          <ul class="common_list destination">
+         </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+jQuery(".AppToggle").click(function(){
+jQuery(".AppToggle,.AppMenu").toggleClass('active');
+});
+$('#slider').click(function(){
+$('body').toggleClass("black");
+$('.add,.remove').toggleClass("black");
+})
+$('.common_list-item').click(function(){
+    $(this).parent().find('.common_list-item').removeClass('active');
+    $(this).addClass('active');
+
+    var source = $(this).parents('.pick-list').find('.source').children('.active');
+    if(source.length > 0) {
+        $(this).attr('disabled',false);
+        $('.add').attr('disabled',false);
+    } else {
+        $(this).attr('disabled',true);
+        $('.add').attr('disabled',true);
+    };
+
+    var des = $(this).parents('.pick-list').find('.destination').children('.active');
+    if(des.length > 0) {
+        $(this).attr('disabled',false);
+        $('.remove').attr('disabled',false);
+    } else {
+        $(this).attr('disabled',true);
+        $('.remove').attr('disabled',true);
+    };
+});
+
+$('.add').click(function(){
+    var item = $(this).parents('.pick-list').find('.source').children('.active');
+    if(item.length > 0) {
+        $('.source .common_list-item.active').appendTo('.common_list.destination');
+        $('.add').attr('disabled',true);
+        $('.destination .common_list-item.active').removeClass('active');
+    }
+    else{
+    alert("either you haven't selected any agent from assignment group or no agent left here for assignment")
+  }
+});
+
+$('.remove').click(function(){
+    var item = $(this).parents('.pick-list').find('.destination').children('.active');
+    if(item.length > 0) {
+        $('.destination .common_list-item.active').appendTo('.source');
+        $('.remove').attr('disabled',true);
+        $('.source .common_list-item.active').removeClass('active');
+    }
+    else{
+      alert("you haven't selected any agent from revoking group or no agent left here for revoking")
+    }
+});
+
+</script>
+</html>
