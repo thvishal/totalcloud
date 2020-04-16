@@ -197,6 +197,9 @@ input:checked + .slider:before {
   position:relative;
   float: right;
 }
+ul.common_list.source {
+    padding-left: 0px;
+}
 .AppMenu ul li a {
 color:#000;
 }
